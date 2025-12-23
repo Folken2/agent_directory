@@ -10,6 +10,8 @@ uv sync --no-install-project
 
 # 2. Set up API keys in .env file
 OPENROUTER_API_KEY=your_key_here
+FAST_MODEL=openrouter/google/gemini-3-flash-preview  # Optional
+IMAGE_MODEL=openrouter/google/gemini-2.5-flash-image-preview  # Optional
 
 # 3. Run the web interface
 adk web
@@ -32,7 +34,7 @@ Opens a browser interface to chat with your agent.
 ### Python
 
 ```python
-from image_agent.agent import root_agent
+from image_generation_agent.agent import root_agent
 
 # Basic usage
 response = root_agent.run("A futuristic cityscape at sunset")
@@ -46,7 +48,7 @@ response = await root_agent.run_async("A futuristic cityscape at sunset")
 ## Project Structure
 
 ```text
-image_agent/
+image_generation_agent/
 ├── agent.py              # Main agent definition
 ├── config/
 │   ├── llm.py           # LLM configuration
@@ -54,8 +56,14 @@ image_agent/
 │   └── utils.py         # Utilities (date, etc.)
 ├── prompt/
 │   └── prompt.py        # Agent instructions
-└── callbacks/
-    └── image_saver.py    # after_model callback for automatic image saving
+├── callbacks/
+│   ├── image_saver.py    # after_model callback for automatic image saving
+│   └── model_config.py  # Model configuration utilities
+├── tools/
+│   └── image_generation.py  # Image generation tool
+├── utils/
+│   └── image_handler.py # Image handling utilities
+└── metadata.json        # Agent metadata for web UI
 ```
 
 ## Customization
@@ -66,8 +74,8 @@ Edit `config/llm.py`:
 
 ```python
 FAST_MODEL = LiteLlm(
-    model="openrouter/google/gemini-2.5-flash",  # Change model here
-    app_name="talent_scout"
+    model="openrouter/google/gemini-3-flash-preview",  # Change model here
+    app_name="adk-samples-directory"
 )
 ```
 
@@ -95,7 +103,7 @@ You are a helpful AI assistant...
 
 1. User provides an image generation prompt
 2. Agent generates image using Gemini image model
-3. Images are automatically saved as artifacts
+3. Images are automatically saved as artifacts via `after_model` callback
 4. Artifacts can be accessed later in the session
 
 ## Image Artifacts
@@ -105,8 +113,6 @@ Generated images are automatically saved as artifacts using Google ADK's `after_
 - **Automatically extracts** images from model responses
 - **Saves them as artifacts** with generated filenames (e.g., `generated_image_1.png`)
 - **Requires no additional code** - works transparently after each image generation
-
-## How It Works
 
 The `after_model_callback` is registered with the agent and automatically processes each model response:
 
@@ -128,7 +134,8 @@ artifact = await load_artifacts(filename="generated_image_1.png")
 
 ## Resources
 
-- [Google ADK](https://github.com/google/adk)
+- [Google ADK Documentation](https://google.github.io/adk-docs/)
 - [Google ADK Artifacts](https://google.github.io/adk-docs/artifacts/)
+- [ADK GitHub Repository](https://github.com/google/adk)
 - [OpenRouter Models](https://openrouter.ai/models)
 - [Gemini Image Generation](https://ai.google.dev/gemini-api/docs/image-generation)

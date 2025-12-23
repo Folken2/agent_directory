@@ -1,6 +1,6 @@
-# EXA MCP Agent
+# Simple Web Search Agent
 
-An AI assistant that uses EXA AI's MCP (Model Context Protocol) server to search the web and ground answers with citations. Built with Google ADK, EXA AI MCP, and OpenRouter.
+A simple AI assistant that grounds answers with web search and always cites sources. Built with Google ADK and OpenRouter.
 
 ## Quick Start
 
@@ -10,8 +10,8 @@ uv sync --no-install-project
 
 # 2. Set up API keys in .env file
 OPENROUTER_API_KEY=your_key_here
-EXA_API_KEY=your_key_here
 FAST_MODEL=openrouter/google/gemini-3-flash-preview  # Optional
+REASONING_MODEL=openrouter/google/gemini-3-pro-preview  # Optional
 
 # 3. Run the web interface
 adk web
@@ -20,7 +20,6 @@ adk web
 **Get API Keys:**
 
 - [OpenRouter](https://openrouter.ai/keys) - for the LLM
-- [EXA AI](https://dashboard.exa.ai/) - for web search
 
 ## Usage
 
@@ -35,7 +34,7 @@ Opens a browser interface to chat with your agent.
 ### Python
 
 ```python
-from exa_mcp_agent.agent import root_agent
+from simple_agent_web_search.agent import root_agent
 
 response = root_agent.run("What are the latest AI developments?")
 print(response)
@@ -44,14 +43,18 @@ print(response)
 ## Project Structure
 
 ```text
-exa_mcp_agent/
-├── agent.py              # Main agent definition with EXA MCP integration
+simple_agent_web_search/
+├── agent.py              # Main agent definition
 ├── config/
 │   ├── llm.py           # LLM configuration
-│   └── utils.py         # MCP tool handling utilities
+│   ├── config.py        # Environment variables
+│   └── utils.py         # Utilities (date, etc.)
 ├── prompt/
 │   └── prompt.py        # Agent instructions
-└── metadata.json        # Agent metadata for web UI
+├── sub_agent/
+│   └── sub_agent.py     # Sub-agent definition (if applicable)
+└── tools/
+    └── web_search.py    # Web search tool
 ```
 
 ## Customization
@@ -90,18 +93,9 @@ You are a helpful AI assistant...
 ## How It Works
 
 1. User asks a question
-2. Agent uses EXA AI MCP server to search the web
-3. MCP tools are dynamically loaded at runtime via callback
-4. Agent synthesizes answer from search results
-5. Returns answer with sources (🔗)
-
-## MCP Integration
-
-This agent uses the EXA AI MCP server to access web search capabilities. The MCP connection:
-- Connects to EXA AI's MCP endpoint via HTTPS
-- Dynamically loads available tools at runtime
-- Provides web search and content extraction capabilities
-- Requires `EXA_API_KEY` environment variable
+2. Agent searches web using Google Search
+3. Synthesizes answer from results
+4. Returns answer with sources (🔗)
 
 ## Example Response
 
@@ -116,9 +110,16 @@ This agent uses the EXA AI MCP server to access web search capabilities. The MCP
 2. [Title](URL2)
 ```
 
+## Features
+
+- **Web Search**: Uses Google Search to find current information
+- **Source Citations**: Always cites sources for transparency
+- **Real-time Information**: Accesses up-to-date web content
+- **Simple Architecture**: Straightforward single-agent design
+
 ## Resources
 
 - [Google ADK Documentation](https://google.github.io/adk-docs/)
 - [ADK GitHub Repository](https://github.com/google/adk)
-- [EXA AI Docs](https://docs.exa.ai/)
 - [OpenRouter Models](https://openrouter.ai/models)
+
