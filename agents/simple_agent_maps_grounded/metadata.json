@@ -12,10 +12,9 @@
     "Find vendors and service providers near your business locations"
   ],
   "samplePrompts": [
-    "Find all Starbucks locations within a 2-mile radius of Union Square in San Francisco. Show me their hours, ratings, and which ones have drive-thru.",
-    "Search for event venues in downtown Seattle that can accommodate 100+ people, have parking, and are rated 4.5 stars or higher.",
-    "Find the nearest urgent care clinics to 1600 Amphitheatre Parkway, Mountain View, CA. Show me their current wait times and which ones accept walk-ins.",
-    "Search for coworking spaces in Austin's Domain area with 24/7 access, meeting rooms, and proximity to public transit stops."
+    "Find Italian restaurants in Manhattan, New York with outdoor seating and ratings above 4.0 stars. Show me their locations, hours, addresses, and reservation options.",
+    "Search for the best-rated coffee shops in Barcelona's Gothic Quarter. Include their addresses, hours, ratings, and what makes them special.",
+    "Find event venues in Tokyo's Shibuya district that can accommodate 100+ people, have parking, and are rated 4.5 stars or higher. Include addresses and contact information."
   ],
   "author": "Albert Folch"
 }
