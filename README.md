@@ -125,8 +125,6 @@ For detailed contribution instructions, including metadata templates and submiss
 ### Contribution Requirements
 
 When contributing:
-- Follow the existing code style (Black formatting, Ruff linting)
-- Include type hints
 - Add appropriate documentation
 - Include tests for new features
 - **Ensure `metadata.json` is complete and accurate** - this is critical for your agent to appear on the website
@@ -134,9 +132,8 @@ When contributing:
 ## Resources
 
 - **[Live Agent Directory](https://agentdirectory.folch.ai)** - Test all agents in this repository
-- [Google ADK Documentation](https://github.com/google/adk)
+- [Google ADK Documentation](https://google.github.io/adk-docs/)
 - [ADK Python Repository](https://github.com/google/adk-python)
-- [Model Context Protocol (MCP)](https://modelcontextprotocol.io/)
 - [Contribution Guide](https://agentdirectory.folch.ai/contribute) - Learn how to submit your agent
 
 ## License
