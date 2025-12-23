@@ -14,7 +14,7 @@ RUN apt-get update && apt-get install -y \
 RUN pip install --no-cache-dir uv
 
 # Copy dependency files for better layer caching
-COPY pyproject.toml uv.lock* ./
+COPY agents/pyproject.toml agents/uv.lock* ./
 
 # Install dependencies - if uv.lock exists use it, otherwise create it
 RUN uv sync --frozen || uv sync
@@ -29,6 +29,7 @@ EXPOSE 8000
 ENV PYTHONUNBUFFERED=1
 ENV PATH="/app/.venv/bin:$PATH"
 ENV PORT=8000
+ENV AGENTS_DIR=agents
 
 # Run the application
 CMD [".venv/bin/python", "run_adk.py"]
