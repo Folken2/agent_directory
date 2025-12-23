@@ -1,0 +1,21 @@
+{
+  "name": "simple_agent_maps_grounded",
+  "displayName": "Google Maps Agent",
+  "logo": "https://www.google.com/maps/favicon.ico",
+  "description": "AI assistant that grounds answers using Google Maps search and always cites sources",
+  "tools": ["google maps"],
+  "tags": ["maps", "location", "places", "local-search"],
+  "useCases": [
+    "Find nearby restaurants and services for personal errands",
+    "Scout locations for client meetings and company events",
+    "Research office locations when expanding to new cities",
+    "Find vendors and service providers near your business locations"
+  ],
+  "samplePrompts": [
+    "Find all Starbucks locations within a 2-mile radius of Union Square in San Francisco. Show me their hours, ratings, and which ones have drive-thru.",
+    "Search for event venues in downtown Seattle that can accommodate 100+ people, have parking, and are rated 4.5 stars or higher.",
+    "Find the nearest urgent care clinics to 1600 Amphitheatre Parkway, Mountain View, CA. Show me their current wait times and which ones accept walk-ins.",
+    "Search for coworking spaces in Austin's Domain area with 24/7 access, meeting rooms, and proximity to public transit stops."
+  ],
+  "author": "Albert Folch"
+}

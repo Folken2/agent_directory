@@ -1,0 +1,26 @@
+{
+  "name": "your_agent_name",
+  "displayName": "Your Agent Display Name",
+  "description": "A brief description of what your agent does",
+  "tools": [
+    "tool1",
+    "tool2"
+  ],
+  "tags": [
+    "tag1",
+    "tag2"
+  ],
+  "useCases": [
+    "Use case 1",
+    "Use case 2"
+  ],
+  "samplePrompts": [
+    "Example prompt 1",
+    "Example prompt 2"
+  ],
+  "author": "Your Name",
+  "githubUrl": "https://github.com/yourusername/your-repo",
+  "documentation": "https://your-docs-url.com",
+  "version": "1.0.0"
+}
+

@@ -1,0 +1,21 @@
+{
+  "name": "tavily_mcp_agent",
+  "displayName": "Tavily Web Intelligence Agent",
+  "logo": "https://tavily.com/favicon.ico",
+  "description": "AI assistant that extracts and analyzes information from websites to gather competitive data, monitor pricing, and compile market research with source citations",
+  "tools": ["tavily-search", "tavily-extract", "tavily-map", "tavily-crawl"],
+  "tags": ["research", "web-intelligence", "data-extraction", "citations"],
+  "useCases": [
+    "Look up information from websites for personal research",
+    "Monitor competitor pricing and product changes automatically",
+    "Extract customer reviews and testimonials from competitor sites",
+    "Compile market research from multiple industry sources"
+  ],
+  "samplePrompts": [
+    "Find all documentation pages on tavily.com and provide instructions on how to get started with Tavily",
+    "Extract the exact pricing table from Stripe's pricing page. Pull all plan tiers, features, and transaction fees in a structured format.",
+    "Gather all customer testimonials from the homepage and pricing pages of Notion's website. Extract quotes and customer names.",
+    "Compile a competitive analysis of project management tools by extracting feature lists from Asana, Monday.com, and ClickUp's product pages. Compare their enterprise pricing tiers and highlight unique differentiators."
+  ],
+  "author": "Albert Folch"
+}

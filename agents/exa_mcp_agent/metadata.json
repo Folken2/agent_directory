@@ -1,0 +1,24 @@
+{
+  "name": "exa_mcp_agent",
+  "displayName": "EXA AI Research Agent",
+  "logo": "/exa-logo.svg",
+  "description": "AI assistant that conducts deep research using advanced search tools to gather company intelligence, find key decision-makers, and analyze market trends with comprehensive citations",
+  "tools": [
+    "web_search_exa",
+    "get_code_context_exa"
+  ],
+  "tags": ["research", "competitive-intelligence", "company-research", "citations"],
+  "useCases": [
+    "Research companies and people for general knowledge",
+    "Build detailed competitive intelligence reports with company financials and strategy",
+    "Find and profile key decision-makers at target accounts for sales outreach",
+    "Conduct market research on emerging trends affecting your industry"
+  ],
+  "samplePrompts": [
+    "Find the latest funding rounds and valuation data for Anthropic in 2024-2025. Include details about their Series C and any strategic partnerships.",
+    "Search for technical architecture documentation on LangChain's RAG implementation. Focus on their vector store integration patterns and retrieval strategies.",
+    "Analyze the authentication flow in the Next.js App Router. Find code examples from the official Next.js repository showing middleware and route protection patterns.",
+    "Compare the pricing models of OpenAI GPT-5, Anthropic Claude 4 Sonnet, and Google Gemini 3 Pro. Include API rate limits and token costs."
+  ],
+  "author": "Albert Folch"
+}

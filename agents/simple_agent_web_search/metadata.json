@@ -1,0 +1,21 @@
+{
+  "name": "simple_agent_web_search",
+  "displayName": "Google Search Agent",
+  "logo": "https://www.google.com/favicon.ico",
+  "description": "AI assistant that grounds answers using Google search and always cites sources",
+  "tools": ["google search"],
+  "tags": ["research", "grounded", "citations"],
+  "useCases": [
+    "Get quick answers to general questions with reliable sources",
+    "Research market trends and competitor activities with citations",
+    "Track industry news and regulatory changes affecting your business",
+    "Gather data for executive briefings and board presentations"
+  ],
+  "samplePrompts": [
+    "What is the current market cap and stock price of NVIDIA as of today? Include recent earnings highlights and analyst price targets.",
+    "Find the official documentation on React Server Components. Show me the latest best practices and migration guides from the React team.",
+    "Compare the security features of AWS S3 vs Google Cloud Storage. Focus on encryption at rest, access controls, and compliance certifications.",
+    "What are the recent news about OpenAI's GPT-5 updates? Find the latest feature announcements and API changes from the last 2 weeks."
+  ],
+  "author": "Albert Folch"
+}
